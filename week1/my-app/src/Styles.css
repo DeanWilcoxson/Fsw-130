@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 20px;
+}
+
+footer {
+    padding: 20px;
+}
+
+button {
+    border: none;
+    padding: 10px;
+    margin: 10px;
+}
+
+.dark-theme {
+    background-color: darkblue;
+    color: lightsteelblue;
+}
+
+.light-theme {
+    background-color: lightsteelblue;
+    color: darkblue;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#switchButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
