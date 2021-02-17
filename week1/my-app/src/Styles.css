@@ -1,4 +1,5 @@
 body {
+    background-color: lightsteelblue;
     margin: 0;
     padding: 0;
 }
@@ -8,7 +9,9 @@ header {
 }
 
 footer {
+    margin-top: 320px;
     padding: 20px;
+    text-align: center;
 }
 
 button {
@@ -19,11 +22,13 @@ button {
 
 .dark-theme {
     background-color: darkblue;
-    color: lightsteelblue;
+    color: white;
 }
 
 .light-theme {
-    background-color: lightsteelblue;
+    box-shadow: 2px 2px 2px;
+    border: 4px outset white;
+    background-color: whitesmoke;
     color: darkblue;
 }
 
