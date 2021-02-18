@@ -8,10 +8,10 @@ header {
     padding: 20px;
 }
 
-footer {
-    margin-top: 320px;
-    padding: 20px;
-    text-align: center;
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 button {
@@ -20,7 +20,20 @@ button {
     margin: 10px;
 }
 
+#switchButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer {
+    margin-top: 320px;
+    padding: 20px;
+    text-align: center;
+}
+
 .dark-theme {
+    border: 4px inset grey;
     background-color: darkblue;
     color: white;
 }
@@ -30,16 +43,4 @@ button {
     border: 4px outset white;
     background-color: whitesmoke;
     color: darkblue;
-}
-
-.navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-#switchButton {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }

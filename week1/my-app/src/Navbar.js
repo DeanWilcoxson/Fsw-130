@@ -1,13 +1,24 @@
 import React from "react";
+import ThemeContext from "./ThemeContext";
 
-function Navbar(props) {
-  return (
-    <div className="navbar">
-      <button className={`${props.theme}-theme`}>Home</button>
-      <button className={`${props.theme}-theme`}>About</button>
-      <button className={`${props.theme}-theme`}>Contact Us</button>
-      <button className={`${props.theme}-theme`}>Services</button>
-    </div>
-  );
+class Navbar extends React.Component {
+  constructor() {
+    super();
+    this.context = {};
+  }
+  render() {
+    return (
+      <ThemeContext.Consumer>
+        {(theme) => (
+          <div className="navbar">
+            <button className={`${theme}-theme`}>Home</button>
+            <button className={`${theme}-theme`}>About</button>
+            <button className={`${theme}-theme`}>Contact Us</button>
+            <button className={`${theme}-theme`}>Services</button>
+          </div>
+        )}
+      </ThemeContext.Consumer>
+    );
+  }
 }
 export default Navbar;

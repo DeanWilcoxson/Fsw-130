@@ -1,9 +1,20 @@
 import React from "react";
-function Header(props) {
-  return (
-    <header className={`${props.theme}-theme`}>
-      <h2>Amazing Themed Header</h2>
-    </header>
-  );
+import ThemeContext from "./ThemeContext";
+class Header extends React.Component {
+  constructor() {
+    super();
+    this.context = {};
+  }
+  render() {
+    return (
+      <ThemeContext.Consumer>
+        {(theme) => (
+          <header className={`${theme}-theme`}>
+            <h2>{theme === "light" ? "Light" : "Dark"} Theme</h2>
+          </header>
+        )}
+      </ThemeContext.Consumer>
+    );
+  }
 }
 export default Header;
