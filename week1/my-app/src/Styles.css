@@ -1,5 +1,5 @@
 body {
-    background-color: lightsteelblue;
+    background-color: steelblue;
     margin: 0;
     padding: 0;
 }
@@ -12,6 +12,19 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    background-color: steelblue;
+}
+
+.dark-theme {
+    box-shadow: black 4px 2px 4px;
+    background-color: darkblue;
+    color: white;
+}
+
+.light-theme {
+    box-shadow: 2px 2px 2px;
+    background-color: whitesmoke;
+    color: darkblue;
 }
 
 button {
@@ -21,26 +34,14 @@ button {
 }
 
 #switchButton {
+    margin: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
 footer {
-    margin-top: 320px;
+    margin-top: 220px;
     padding: 20px;
     text-align: center;
-}
-
-.dark-theme {
-    border: 4px inset grey;
-    background-color: darkblue;
-    color: white;
-}
-
-.light-theme {
-    box-shadow: 2px 2px 2px;
-    border: 4px outset white;
-    background-color: whitesmoke;
-    color: darkblue;
 }
