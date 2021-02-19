@@ -1,19 +1,13 @@
 import React from "react";
-import ThemeContext from "./ThemeContext";
+import { ThemeContext } from "./ThemeContext";
 class Button extends React.Component {
-  constructor() {
-    super();
-    this.context = {};
-  }
-  handleChange = (e) => {};
-
   render() {
     return (
       <ThemeContext.Consumer>
-        {(theme) => (
+        {({theme, toggleTheme}) => (
           <div id="switchButton">
-            <button className={`${theme}-theme`} onClick={this.handleChange}>
-              Switch Theme
+            <button className={`${theme}-theme`} onClick={toggleTheme}>
+              Toggle Theme
             </button>
           </div>
         )}

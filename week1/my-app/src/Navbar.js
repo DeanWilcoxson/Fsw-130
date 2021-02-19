@@ -1,11 +1,6 @@
 import React from "react";
-import ThemeContext from "./ThemeContext";
-
+import { ThemeContext } from "./ThemeContext";
 class Navbar extends React.Component {
-  constructor() {
-    super();
-    this.context = {};
-  }
   render() {
     return (
       <ThemeContext.Consumer>
