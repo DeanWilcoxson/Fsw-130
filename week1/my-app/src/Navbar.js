@@ -6,10 +6,10 @@ class Navbar extends React.Component {
       <ThemeContext.Consumer>
         {(theme) => (
           <div className="navbar">
-            <button className={`${theme}-theme`}>Home</button>
-            <button className={`${theme}-theme`}>About</button>
-            <button className={`${theme}-theme`}>Contact Us</button>
-            <button className={`${theme}-theme`}>Services</button>
+            <button style={theme.theme}>Home</button>
+            <button style={theme.theme}>About</button>
+            <button style={theme.theme}>Contact Us</button>
+            <button style={theme.theme}>Services</button>
           </div>
         )}
       </ThemeContext.Consumer>

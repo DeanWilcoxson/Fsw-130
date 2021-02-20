@@ -4,9 +4,9 @@ class Button extends React.Component {
   render() {
     return (
       <ThemeContext.Consumer>
-        {({theme, toggleTheme}) => (
+        {({ theme, toggleTheme }) => (
           <div id="switchButton">
-            <button className={`${theme}-theme`} onClick={toggleTheme}>
+            <button style={theme} onClick={toggleTheme}>
               Toggle Theme
             </button>
           </div>
