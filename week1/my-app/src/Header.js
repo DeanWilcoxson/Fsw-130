@@ -5,7 +5,7 @@ class Header extends React.Component {
     return (
       <ThemeContext.Consumer>
         {(theme) => {
-          // console.log(theme, "header line 8")
+          console.log(theme, "header line 8")
           return (
           <header style={theme.theme}>
             <h2>{theme.theme.color === "#ffffff" ? "Dark": "Light" } Theme</h2>

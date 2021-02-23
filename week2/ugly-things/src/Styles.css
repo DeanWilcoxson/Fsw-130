@@ -1,0 +1,86 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMTgwOTN8MHwxfHNlYXJjaHwzfHxjb3VudHJ5fGVufDB8fHw&ixlib=rb-1.2.1&q=80&w=1080");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#navBox {
+    background-color: rgba(128, 128, 128, 0.462);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navBtn {
+    text-shadow: black -3px -3px 6px;
+    font-family: "50 Blizzards";
+    padding: 15px;
+    text-decoration: underline;
+    border: none;
+    color: white;
+    background-color: rgba(128, 128, 128, 0.089);
+    font-size: 20px;
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+#formDiv {
+    background-color: rgba(128, 128, 128, 0.462);
+}
+
+#form {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+#ugly {
+    text-shadow: black -5px -2px 5px;
+    color: white;
+    font-size: 40px;
+    font-family: "50 Blizzards";
+    text-align: center;
+    grid-column: 1/2;
+    grid-row: 2/4;
+}
+
+#things {
+    text-shadow: black 5px -4px 2px;
+    color: white;
+    font-size: 40px;
+    font-family: "50 Blizzards";
+    text-align: center;
+    grid-column: 3/4;
+    grid-row: 2/4;
+}
+
+#title {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#desc {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+#url {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+#formButton {
+    font-family: "50 Blizzards";
+    color: white;
+    background-color: rgba(95, 158, 160, 0.489);
+    font-size: 20px;
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+#formButtonText {
+    text-shadow: blue -3px -1px;
+}
