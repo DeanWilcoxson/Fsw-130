@@ -1,10 +1,35 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1485846234645-a62644f84728?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMTgwOTN8MHwxfHNlYXJjaHwyMHx8bW92aWUlMjByZWVsc3xlbnwwfHx8&ixlib=rb-1.2.1&q=80&w=1080");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+::placeholder {
+    color: blue;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+}
+
+#listItem {
+    background-color: rgba(128, 128, 128, 0.496);
+}
+
 #actor {
     list-style: none;
 }
 
 #actorList {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
+}
+
+#movieTitle {
+    text-align: left;
+    text-decoration: underline;
 }

@@ -6,8 +6,19 @@ export default class ContextProvider extends Component {
     this.state = {
       movies: [
         {
+          id: "5",
+          title: "Joker",
+          actors: [
+            { id: "1", name: "Joaquin Phoenix" },
+            { id: "2", name: "Robert De Niro" },
+            { id: "3", name: "Zazie Beetz" },
+            { id: "4", name: "Frances Conroy" },
+            { id: "5", name: "Brett Cullen" },
+          ],
+        },
+        {
           id: "1",
-          title: "StarWars",
+          title: "Star Wars",
           actors: [
             { id: "1", name: "Mark Hamill" },
             { id: "2", name: "Harrison Ford" },
@@ -50,17 +61,6 @@ export default class ContextProvider extends Component {
           ],
         },
         {
-          id: "5",
-          title: "Joker",
-          actors: [
-            { id: "1", name: "Joaquin Phoenix" },
-            { id: "2", name: "Robert De Niro" },
-            { id: "3", name: "Zazie Beetz" },
-            { id: "4", name: "Frances Conroy" },
-            { id: "5", name: "Brett Cullen" },
-          ],
-        },
-        {
           id: "6",
           title: "X-men: Days of Future Past",
           actors: [
@@ -74,9 +74,14 @@ export default class ContextProvider extends Component {
       ],
     };
   }
+  
   render() {
     const moviesContext = this.state;
-    return <Provider value={moviesContext}>{this.props.children}</Provider>;
+    return (
+      <Provider value={moviesContext}>
+        {this.props.children}
+      </Provider>
+    );
   }
 }
-export { ContextProvider, Consumer as ContextConsumer };
+export { Consumer as ContextConsumer };

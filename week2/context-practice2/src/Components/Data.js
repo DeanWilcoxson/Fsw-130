@@ -1,5 +1,5 @@
 import { React, Component } from "react";
-import { ContextConsumer } from "./Context";
+import { ContextConsumer } from "../Context";
 export default class Data extends Component {
   render() {
     return (

@@ -1,26 +1,23 @@
 import { React, Component } from "react";
-import Form from "./Form";
-import Data from "./Data";
-import { ContextConsumer } from "./Context";
-import './Styles.css'
+import Form from "./Components/Form";
+import Data from "./Components/Data";
+import "./Styles.css";
+import ContextProvider from "./Context";
 export default class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      movies: [],
+      movies: []
+      
     };
   }
   render() {
     return (
       <div>
-        <ContextConsumer>
-          {({ movies }) => (
-            <div>
-              <Form />
-              <Data />
-            </div>
-          )}
-        </ContextConsumer>
+        <ContextProvider>
+          <Form />
+          <Data />
+        </ContextProvider>
       </div>
     );
   }
