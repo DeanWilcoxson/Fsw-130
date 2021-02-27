@@ -1,4 +1,5 @@
 import { React, Component } from "react";
+import { ContextConsumer } from "../Context";
 export default class Form extends Component {
   constructor() {
     super();
@@ -6,38 +7,45 @@ export default class Form extends Component {
   }
   render() {
     return (
-      <div id="formDiv">
-        <hr />
-        <form id="form" /* onSubmit={""} */>
-          <h1 id="ugly">UGLY</h1>
-          <h1 id="things">THINGS</h1>
-          <input
-            id="title"
-            type="text"
-            name=""
-            placeholder="Title"
-            // onChange={""}
-          />
-          <textarea
-            id="desc"
-            type="text"
-            name=""
-            placeholder="Description"
-            // onChange={""}
-          />
-          <input
-            id="url"
-            type="url"
-            name=""
-            placeholder="Image url"
-            // onChange={""}
-          />
-          <button id="formButton" name="">
-            <b id="formButtonText">Post Something Ugly</b>
-          </button>
-        </form>
-        <hr />
-      </div>
+      <ContextConsumer>
+        {(context) => (
+          <div id="formDiv">
+            <hr />
+            <form id="form" onSubmit={context.add}>
+              <h1 id="ugly">UGLY</h1>
+              <h1 id="things">THINGS</h1>
+              <input
+                id="title"
+                value={context.title}
+                type="text"
+                name="title"
+                placeholder="Title"
+                onChange={context.change}
+              />
+              <textarea
+                id="desc"
+                value={context.description}
+                type="text"
+                name="description"
+                placeholder="Description"
+                onChange={context.change}
+              />
+              <input
+                id="url"
+                value={context.url}
+                type="url"
+                name="url"
+                placeholder="Image url"
+                onChange={context.change}
+              />
+              <button id="formButton">
+                <b id="formButtonText">Post Something Ugly</b>
+              </button>
+            </form>
+            <hr />
+          </div>
+        )}
+      </ContextConsumer>
     );
   }
 }
