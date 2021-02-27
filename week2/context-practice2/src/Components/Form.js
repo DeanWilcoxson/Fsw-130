@@ -5,12 +5,6 @@ export default class Form extends Component {
     super()
     this.state = {}
   }
-  // handleChange = (e) => {
- 
-  // };
-  // handleClick = (e) => {
-
-  // };
   render() {
     return (
       <ContextConsumer>

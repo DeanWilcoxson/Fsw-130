@@ -43,16 +43,13 @@ export default class ContextProvider extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
-
   handleChange(e) {
     console.log(e.target);
     const { name, value } = e.target;
     this.setState({ [name]: value });
   }
-
   handleClick(e) {
     console.log(e.target);
-
     e.preventDefault();
     let newObj = {
       id: count++,
@@ -62,9 +59,7 @@ export default class ContextProvider extends Component {
     var newMovies = this.state.movies;
     newMovies.push(newObj)
     this.setState(prevState => ({ movies: newMovies}))
-    
   }
-
   render() {
     return (
       <Provider
