@@ -4,11 +4,10 @@ import Data from "./Components/Data";
 import "./Styles.css";
 import ContextProvider from "./Context";
 export default class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      movies: []
-      
+      movies: [],
     };
   }
   render() {

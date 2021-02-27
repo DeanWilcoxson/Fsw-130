@@ -1,84 +1,79 @@
 import React, { Component } from "react";
 const { Provider, Consumer } = React.createContext();
+let count = 0;
 export default class ContextProvider extends Component {
   constructor() {
     super();
     this.state = {
       movies: [
         {
-          id: "5",
+          id: count++,
           title: "Joker",
-          actors: [
-            { id: "1", name: "Joaquin Phoenix" },
-            { id: "2", name: "Robert De Niro" },
-            { id: "3", name: "Zazie Beetz" },
-            { id: "4", name: "Frances Conroy" },
-            { id: "5", name: "Brett Cullen" },
-          ],
+          actor: "Joaquin Phoenix",
         },
         {
-          id: "1",
+          id: count++,
           title: "Star Wars",
-          actors: [
-            { id: "1", name: "Mark Hamill" },
-            { id: "2", name: "Harrison Ford" },
-            { id: "3", name: "Carrie Fisher" },
-            { id: "4", name: "Anthony Daniels" },
-            { id: "5", name: "Kenny Baker" },
-          ],
+          actor: "Mark Hamill",
         },
         {
-          id: "2",
+          id: count++,
           title: "Avengers",
-          actors: [
-            { id: "1", name: "Robert Downey Jr" },
-            { id: "2", name: "Chris Evans" },
-            { id: "3", name: "Mark Ruffalo" },
-            { id: "4", name: "Jeremy Renner" },
-            { id: "5", name: "Chris Hemsworth" },
-          ],
+          actor: "Robert Downey Jr",
         },
         {
-          id: "3",
+          id: count++,
           title: "Pulp Fiction",
-          actors: [
-            { id: "1", name: "Bruce Willis" },
-            { id: "2", name: "Tim Roth" },
-            { id: "3", name: "Samuel L. Jackson" },
-            { id: "4", name: "John Travolta" },
-            { id: "5", name: "Uma Thurman" },
-          ],
+          actor: "Samuel L. Jackson",
         },
         {
-          id: "4",
+          id: count++,
           title: "Reservoir Dogs",
-          actors: [
-            { id: "1", name: "Harvey Keitel" },
-            { id: "2", name: "Michael Madsen" },
-            { id: "3", name: "Tim Roth" },
-            { id: "4", name: "Steve Buscemi" },
-            { id: "5", name: "Quentin Tarantino" },
-          ],
+          actor: "Harvey Keitel",
         },
         {
-          id: "6",
+          id: count++,
           title: "X-men: Days of Future Past",
-          actors: [
-            { id: "1", name: "Hugh Jackman" },
-            { id: "2", name: "James McAvoy" },
-            { id: "3", name: "Michael Fassbender" },
-            { id: "4", name: "Halle Berry" },
-            { id: "5", name: "Peter Dinklage" },
-          ],
+          actor: "Hugh Jackman",
         },
       ],
+      title: "",
+      actor: "",
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
-  
+
+  handleChange(e) {
+    console.log(e.target);
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  }
+
+  handleClick(e) {
+    console.log(e.target);
+
+    e.preventDefault();
+    let newObj = {
+      id: count++,
+      title: this.state.title,
+      actor: this.state.actor,
+    };
+    var newMovies = this.state.movies;
+    newMovies.push(newObj)
+    this.setState(prevState => ({ movies: newMovies}))
+    
+  }
+
   render() {
-    const moviesContext = this.state;
     return (
-      <Provider value={moviesContext}>
+      <Provider
+        value={{
+          state: this.state,
+          change: this.handleChange,
+          click: this.handleClick,
+        }}
+      >
         {this.props.children}
       </Provider>
     );
