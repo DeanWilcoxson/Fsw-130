@@ -7,11 +7,31 @@ export default class Navbar extends Component {
   render() {
     return (
       <div id="navBox">
-        <button href="#"className="navBtn">Home</button>
-        <button href="#"className="navBtn">Services</button>
-        <button href="#"className="navBtn">About Us</button>
-        <button href="#"className="navBtn">Careers</button>
-        <button href="#"className="navBtn">Contact Us</button>
+        <button className="navBtn">
+          <a className="navLink" href="localhost:3000">
+            Home
+          </a>
+        </button>
+        <button className="navBtn">
+          <a className="navLink" href="localhost:3000">
+            Services
+          </a>
+        </button>
+        <button className="navBtn">
+          <a className="navLink" href="localhost:3000">
+            About Us
+          </a>
+        </button>
+        <button className="navBtn">
+          <a className="navLink" href="localhost:3000">
+            Careers
+          </a>
+        </button>
+        <button className="navBtn">
+          <a className="navLink" href="localhost:3000">
+            Contact Us
+          </a>
+        </button>
       </div>
     );
   }
