@@ -8,7 +8,9 @@ export default class Context extends Component {
     this.state = {
       uglyThings: [
         {
-          comments: [{ id: commentCount++, text: "Covid should be taken seriously" }],
+          comments: [
+            { id: commentCount++, text: "Covid should be taken seriously" },
+          ],
           id: count++,
           title: "Ugliest Thing",
           description: "Hmmm.. I wonder why?",
@@ -35,7 +37,7 @@ export default class Context extends Component {
       title: "",
       description: "",
       url: "",
-      comment: "",
+      comments: [{id:"", text:""}],
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -62,23 +64,40 @@ export default class Context extends Component {
       uglyThings: newUglyThings,
     }));
   }
-  handleCommentAdd() {}
-  handleEdit(e) {}
 
-  handleDelete() {}
+  handleEdit(e) {
+    e.preventDefault();
+  }
 
-  handleCommentDelete() {}
+  handleDelete(e, id) {
+    e.preventDefault();
+    let editThing = e.target.parentNode.parentNode;
+    console.log(editThing);
+    // let newerUglyThings = this.state.uglyThings.map((x) => {
+    //   if (x.id === e.target.id) {
+    //     return x.id !== id;
+    //   }
+    // });
+  }
+
+  handleCommentAdd(e) {
+    e.preventDefault();
+  }
+
+  handleCommentDelete(e) {
+    e.preventDefault();
+  }
 
   render() {
     return (
       <Provider
         value={{
-          comment: this.state.comment,
           uglyThings: this.state.uglyThings,
-          add: this.handleClick,
-          del: this.handleDelete,
           change: this.handleChange,
+          add: this.handleClick,
           edit: this.handleEdit,
+          del: this.handleDelete,
+          comment: this.state.comments,
           comDel: this.handleCommentDelete,
           comAdd: this.handleCommentAdd,
         }}

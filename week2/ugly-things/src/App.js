@@ -6,11 +6,6 @@ import "./Styles.css";
 import Context from "./Context";
 
 export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
   render() {
     return (
       <Context>

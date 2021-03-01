@@ -183,8 +183,18 @@ body {
     font-family: "50 Blizzards";
     padding: 15px;
     text-decoration: underline;
-    /* border: none; */
+    border: none;
     color: white;
     background-color: rgba(128, 128, 128, 0.089);
     font-size: 14px;
+}
+
+.buttonGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.commentGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }

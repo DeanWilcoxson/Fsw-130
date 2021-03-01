@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import { ContextConsumer } from "./../Context";
 export default class List extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
   render() {
     return (
       <ContextConsumer>
@@ -13,42 +9,40 @@ export default class List extends Component {
             <div id="uglyBox">
               {context.uglyThings.map((x) => {
                 return (
-                  <div className="uglyThing" key={x.url}>
+                  <div className="uglyThing" key={x.id}>
                     <h1 id="titleId">{x.title}</h1>
                     <h3 id="descId">{x.description}</h3>
                     <img id="imgId" src={x.url} alt="catphoto.jpeg" />
-                    <span>
+                    <span className="buttonGrid">
                       <button id="editBtn" onClick={context.edit}>
-                        Edit
+                        Edit Post
                       </button>
                       <button id="delBtn" onClick={context.del}>
-                        Delete
+                        Delete Post
                       </button>
+                    </span>
+                    <form className="commentGrid">
+                      <input
+                        className="comment"
+                        name="comment"
+                        value={context.comment.text}
+                        onChange={context.change}
+                        placeholder="Comment Here"
+                      ></input>
                       <button onClick={context.comAdd} id="commentAddBtn">
                         Add Comment
                       </button>
-                    </span>
-                    <input
-                      className="comment"
-                      name="comment"
-                      value={context.comment}
-                      onChange={context.change}
-                      placeholder="Comment Here"
-                    ></input>
+                    </form>
                     <div>
+                      if (x.comments.text !== "")
                       {x.comments.map((y) => {
                         return (
-                          <div key={y.id}>
-                            <p className="comments">
-                              {y.text}
-                              <button
-                                onClick={context.comDel}
-                                id="commentDelBtn"
-                              >
-                                Delete Comment
-                              </button>
-                            </p>
-                          </div>
+                          <p key={y.id} className="comments">
+                            {y.text}
+                            <button onClick={context.comDel} id="commentDelBtn">
+                              Delete Comment
+                            </button>
+                          </p>
                         );
                       })}
                     </div>

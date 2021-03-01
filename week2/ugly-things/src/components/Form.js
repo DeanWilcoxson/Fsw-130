@@ -1,10 +1,6 @@
 import { React, Component } from "react";
 import { ContextConsumer } from "../Context";
 export default class Form extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
   render() {
     return (
       <ContextConsumer>
