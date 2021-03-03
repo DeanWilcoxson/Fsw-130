@@ -107,9 +107,6 @@ body {
     border: 1px white solid;
     padding: 15px;
     background-color: rgba(128, 128, 128, 0.427);
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto; */
     display: flex;
     flex-direction: column;
 }

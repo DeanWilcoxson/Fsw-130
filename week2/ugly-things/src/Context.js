@@ -37,7 +37,7 @@ export default class Context extends Component {
       title: "",
       description: "",
       url: "",
-      comments: [{id:"", text:""}],
+      comments: [{ id: "", text: "" }],
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -57,27 +57,49 @@ export default class Context extends Component {
       title: this.state.title,
       description: this.state.description,
       url: this.state.url,
+      comments: [],
     };
     var newUglyThings = this.state.uglyThings;
     newUglyThings.push(newObject);
     this.setState((prevState) => ({
       uglyThings: newUglyThings,
+      title: "",
+      description: "",
+      url: "",
+      comments: [{ id: "", text: "" }],
     }));
   }
 
   handleEdit(e) {
-    e.preventDefault();
+    this.setState((prevState) => ({
+      uglyThings: prevState.uglyThings.map((x) => {
+        if (x.id === Number(e.target.parentNode.parentNode.id)) {
+          if (prevState.title.length) {
+            x.title = prevState.title;
+          }
+
+           if (prevState.description.length) {
+            x.description = prevState.description;
+          }
+          
+           if (prevState.url.length) {
+            x.url = prevState.url;
+          }
+          return x;
+        } else {
+          return x;
+        }
+      }),
+    }));
   }
 
-  handleDelete(e, id) {
+  handleDelete(e) {
     e.preventDefault();
-    let editThing = e.target.parentNode.parentNode;
-    console.log(editThing);
-    // let newerUglyThings = this.state.uglyThings.map((x) => {
-    //   if (x.id === e.target.id) {
-    //     return x.id !== id;
-    //   }
-    // });
+    this.setState((prevState) => ({
+      uglyThings: prevState.uglyThings.filter((x) => {
+        return x.id !== Number(e.target.parentNode.parentNode.id);
+      }),
+    }));
   }
 
   handleCommentAdd(e) {
@@ -86,6 +108,9 @@ export default class Context extends Component {
 
   handleCommentDelete(e) {
     e.preventDefault();
+    let editThing = e.target;
+    console.log(editThing);
+    // editThing.remove()
   }
 
   render() {
