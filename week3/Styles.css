@@ -1,0 +1,47 @@
+#box {
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    font-size: 40px;
+    text-align: center;
+}
+
+#timer {
+    background-color: burlywood;
+    padding: 15px;
+}
+
+#buttonBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#start {
+    background-color: green;
+    color: white;
+}
+
+#stop {
+    background-color: red;
+    color: white;
+}
+
+#reset {
+    background-color: blue;
+    color: white;
+}
+
+#lap {
+    background-color: yellow;
+    color: black;
+}
+
+#laps {
+    font-size: 20px;
+    text-align: center;
+}

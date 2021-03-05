@@ -5,13 +5,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Styles.css" />
     <title>Redux</title>
 </head>
 
 <body>
-    <button id="start">Start</button>
-    <button id="stop">Stop</button>
-    <button id="reset">Reset</button>
+    <div id="box">
+        <div>
+            <header>Stop Watch</header>
+            <p id="timer"></p>
+        </div>
+        <div id="buttonBox">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="reset">Reset</button>
+            <button id="lap">Lap</button>
+        </div>
+        <ol id="laps">Laps:</ol>
+    </div>
     <script src="Redux.JS"></script>
 </body>
 
