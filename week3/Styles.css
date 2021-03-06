@@ -10,6 +10,7 @@ header {
 }
 
 #timer {
+    text-align: center;
     background-color: burlywood;
     padding: 15px;
 }
@@ -44,4 +45,5 @@ header {
 #laps {
     font-size: 20px;
     text-align: center;
+    text-decoration: underline;
 }

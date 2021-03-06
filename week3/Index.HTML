@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="Styles.css" />
+    <link rel="stylesheet" href="Styles.CSS" />
     <title>Redux</title>
 </head>
 
@@ -16,14 +16,17 @@
             <p id="timer"></p>
         </div>
         <div id="buttonBox">
-            <button id="start">Start</button>
+            <button id="start" onclick="setInterval(timer, 1000)">Start</button>
             <button id="stop">Stop</button>
             <button id="reset">Reset</button>
             <button id="lap">Lap</button>
         </div>
-        <ol id="laps">Laps:</ol>
+        <ol id="laps">
+            Laps:
+        </ol>
     </div>
-    <script src="Redux.JS"></script>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <script src="./redux/Redux.JS"></script>
 </body>
 
 </html>
