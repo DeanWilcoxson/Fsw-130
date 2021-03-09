@@ -2,6 +2,7 @@ const initialState = {
   hours: 0,
   mins: 0,
   secs: 0,
+  milli: 0,
   laps: [],
   stopTime: true,
 };
@@ -15,7 +16,8 @@ let time = document.getElementById("timer");
 time.textContent = `
     ${store.getState().hours} : 
     ${store.getState().mins} : 
-    ${store.getState().secs}`;
+    ${store.getState().secs} : 
+    ${store.getState().milli}`;
 
 function start() {
   return { type: "START" };
@@ -32,8 +34,9 @@ startBtn.addEventListener("click", () => {
     time.textContent = `
     ${store.getState().hours} : 
     ${store.getState().mins} : 
-    ${store.getState().secs}`;
-  }, 1000);
+    ${store.getState().secs} :
+    ${store.getState().milli}`;
+  }, 1);
   console.log(store.getState());
 });
 
@@ -51,7 +54,8 @@ stopBtn.addEventListener("click", () => {
   time.textContent = `
     ${state.hours} : 
     ${state.mins} : 
-    ${state.secs}`;
+    ${state.secs} :
+    ${state.milli}`;
   console.log(store.getState());
 });
 
@@ -67,7 +71,8 @@ resetBtn.addEventListener("click", () => {
   time.textContent = `
     ${state.hours} : 
     ${state.mins} : 
-    ${state.secs}`;
+    ${state.secs} :
+    ${state.milli}`;
 });
 
 function lap() {
@@ -91,6 +96,7 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         stopTime: false,
+        milli: state.milli < 999 ? state.milli + 1: 0,
         secs: state.secs < 60 ? state.secs + 1 : 0,
         mins: state.mins < 60 && state.secs > 59 ? state.mins + 1 : 0,
         hours: state.mins > 59 ? state.hours + 1 : 0,
