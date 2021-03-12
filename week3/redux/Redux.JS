@@ -1,4 +1,4 @@
-const initialState = {
+let initialState = {
   hours: 0,
   mins: 0,
   secs: 0,

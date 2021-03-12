@@ -1,0 +1,21 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1485770958101-9dd7e4ea6d93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTgwOTN8MHwxfHNlYXJjaHwyMHx8Y29udGFjdHxlbnwwfHx8fDE2MTU1Mzg1Mzc&ixlib=rb-1.2.1&q=80&w=1080");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+* {
+    font-family: "50 blizzards";
+}
+
+#contacts {
+    color: #add;
+    text-align: center;
+}
+
+#addBtn {
+    background-color: blue;
+    color: #add;
+    border-radius: 5px;
+}
