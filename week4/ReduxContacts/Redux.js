@@ -29,8 +29,7 @@ function deleteContact(contact) {
 function reducer() {
   switch (action.type) {
     case "ADD":
-      return { ...state,
-    payload: contact };
+      return { ...state, payload: contact };
     case "DELETE":
       return {};
     default:
