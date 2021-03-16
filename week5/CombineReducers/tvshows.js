@@ -1,4 +1,4 @@
-let initialState = {
+const initialState = {
   tvShows: [],
 };
 function addTvShow(tvShow) {

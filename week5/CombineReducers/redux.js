@@ -10,6 +10,6 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 store.dispatch(addMovie("Star Wars"));
-store.dispatch(addTvShow("Walking Dead"));
 store.dispatch(deleteMovie("Star Wars"));
+store.dispatch(addTvShow("Walking Dead"));
 store.dispatch(deleteTvShow("Walking Dead"));

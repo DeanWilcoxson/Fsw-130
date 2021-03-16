@@ -1,4 +1,4 @@
-let initialState = {
+const initialState = {
   movies:[]
 }
 function addMovie(movie) {
