@@ -1,7 +1,6 @@
-const redux = require("redux");
 let initialState = {
-  movies: [],
-};
+  movies:[]
+}
 function addMovie(movie) {
   return {
     type: "ADD_MOVIE",
@@ -33,10 +32,4 @@ function movieReducer(state = { initialState }, action) {
       return state;
   }
 }
-const store = redux.createStore(movieReducer);
-store.subscribe(() => {
-  console.log(store.getState());
-});
-store.dispatch(addMovie("Star Wars"));
-store.dispatch(deleteMovie("Star Wars"));
-module.exports = { movieReducer };
+module.exports = { movieReducer, addMovie, deleteMovie };

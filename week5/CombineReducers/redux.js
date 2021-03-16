@@ -1,6 +1,6 @@
 const redux = require("redux");
-const { movieReducer } = require("./movies");
-const { tvShowReducer } = require("./tvshows");
+const { movieReducer, addMovie, deleteMovie } = require("./movies");
+const { tvShowReducer, addTvShow, deleteTvShow  } = require("./tvshows");
 let mainReducer = redux.combineReducers({
   movieReducer,
   tvShowReducer,
@@ -9,4 +9,7 @@ const store = redux.createStore(mainReducer);
 store.subscribe(() => {
   console.log(store.getState());
 });
-// console.log(mainReducer, store);
+store.dispatch(addMovie("Star Wars"));
+store.dispatch(addTvShow("Walking Dead"));
+store.dispatch(deleteMovie("Star Wars"));
+store.dispatch(deleteTvShow("Walking Dead"));

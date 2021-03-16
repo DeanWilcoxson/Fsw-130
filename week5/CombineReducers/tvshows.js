@@ -1,4 +1,3 @@
-const redux = require("redux");
 let initialState = {
   tvShows: [],
 };
@@ -22,7 +21,7 @@ function tvShowReducer(state = { initialState }, action) {
         tvShows: [...state.initialState.tvShows, action.payload],
       };
     case "DELETE_TV_SHOW":
-     const updatedArr = state.tvShows.filter(
+      const updatedArr = state.tvShows.filter(
         (show) => show !== action.payload
       );
       return {
@@ -33,10 +32,4 @@ function tvShowReducer(state = { initialState }, action) {
       return state;
   }
 }
-const store = redux.createStore(tvShowReducer)
-store.subscribe(()=>{
-    console.log(store.getState())
-})
-store.dispatch(addTvShow("Walking Dead"))
-store.dispatch(deleteTvShow("Walking Dead"))
-module.exports = { tvShowReducer };
+module.exports = { tvShowReducer, addTvShow, deleteTvShow };
