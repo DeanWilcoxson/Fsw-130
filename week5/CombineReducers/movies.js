@@ -13,12 +13,17 @@ function deleteMovie(movie) {
     payload: movie,
   };
 }
-function movieReducer(state = { initialState }, action) {
+function getMovie() {
+  return {
+    type: "GET_MOVIE",
+  };
+}
+function movieReducer(state = initialState, action) {
   switch (action.type) {
     case "ADD_MOVIE":
       return {
         ...state,
-        movies: [...state.initialState.movies, action.payload],
+        movies: [...state.movies, action.payload],
       };
     case "DELETE_MOVIE":
       const updatedArr = state.movies.filter(
@@ -28,8 +33,12 @@ function movieReducer(state = { initialState }, action) {
         ...state,
         movies: updatedArr,
       };
+      case "GET_MOVIE":
+        return {
+          ...state
+        }
     default:
       return state;
   }
 }
-module.exports = { movieReducer, addMovie, deleteMovie };
+module.exports = { movieReducer, addMovie, deleteMovie, getMovie };
