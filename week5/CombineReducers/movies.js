@@ -1,6 +1,6 @@
 const initialState = {
-  movies:[]
-}
+  movies: [],
+};
 function addMovie(movie) {
   return {
     type: "ADD_MOVIE",
@@ -33,10 +33,10 @@ function movieReducer(state = initialState, action) {
         ...state,
         movies: updatedArr,
       };
-      case "GET_MOVIE":
-        return {
-          ...state
-        }
+    case "GET_MOVIE":
+      return {
+        ...state,
+      };
     default:
       return state;
   }

@@ -33,10 +33,10 @@ function tvShowReducer(state = initialState, action) {
         ...state,
         tvShows: updatedArr,
       };
-      case "GET_TV_SHOW":
-        return {
-          ...state
-        }
+    case "GET_TV_SHOW":
+      return {
+        ...state,
+      };
     default:
       return state;
   }
