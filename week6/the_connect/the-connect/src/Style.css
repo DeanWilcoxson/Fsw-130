@@ -1,0 +1,47 @@
+* {
+    font-family: "50 blizzards";
+    text-shadow: grey 3px 3px 3px;
+}
+
+body {
+    background-image: url("https://images.unsplash.com/photo-1475691058852-37b5d9b6a878?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTgwOTN8MHwxfHNlYXJjaHwzMHx8cGhvbmUlMjBjb250YWN0c3xlbnwwfHx8fDE2MTY0ODQyNTQ&ixlib=rb-1.2.1&q=80&w=1080");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    font-size: 48px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: none;
+}
+
+#form {
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    border: 5px outset white;
+    border-radius: 5px;
+}
+
+#formDiv {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.input {
+    background-color: cornsilk;
+    color: black;
+}
+
+#saveContact {
+    color: white;
+    background-color: green;
+    text-shadow: none;
+}
