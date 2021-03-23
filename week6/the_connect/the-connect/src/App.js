@@ -7,9 +7,10 @@ import "./Style.css";
 function App(props) {
   return (
     <div>
-      <header>{props.payload}The Connect</header>
+      <header>The Connect</header>
       <Form addUser={addPerson} />
       <Contacts delUser={removePerson} />
+      {props.payload}
       <footer>&copy; 2021 WebDev Student Dean Wilcoxson</footer>
     </div>
   );

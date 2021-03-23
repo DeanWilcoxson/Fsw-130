@@ -38,6 +38,7 @@ footer {
 .input {
     background-color: cornsilk;
     color: black;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #saveContact {
