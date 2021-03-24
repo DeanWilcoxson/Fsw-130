@@ -18,7 +18,7 @@ header {
 footer {
     text-align: center;
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     text-shadow: none;
 }
 
@@ -30,6 +30,15 @@ footer {
     border-radius: 5px;
 }
 
+#contactsDiv {
+    background-color: rgba(128, 128, 128, 0.545);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 #formDiv {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -38,11 +47,23 @@ footer {
 .input {
     background-color: cornsilk;
     color: black;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
 }
 
 #saveContact {
     color: white;
     background-color: green;
     text-shadow: none;
+}
+
+.delBtn {
+    background-color: red;
+    color: white;
+}
+
+.contact {
+    padding: 10px;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
 }

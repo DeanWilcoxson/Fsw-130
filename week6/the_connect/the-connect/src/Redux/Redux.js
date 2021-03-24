@@ -1,5 +1,8 @@
 import { createStore } from "redux";
-const initialState = [];
+import { v4 as uuidv4 } from "uuid";
+const initialState = [
+  { name: "Dean Wilcoxson", number: 2098400950, id: uuidv4() },
+];
 export function addPerson(person) {
   return {
     type: "ADD_CHARACTER",

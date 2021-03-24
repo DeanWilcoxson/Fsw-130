@@ -5,17 +5,33 @@ import Form from "./Components/Form";
 import Contacts from "./Components/Contacts";
 import "./Style.css";
 function App(props) {
+  const { payload } = props;
+ 
   return (
     <div>
-      <header>The Connect</header>
+      <header>The Phone Booth</header>
       <Form addUser={addPerson} />
-      <Contacts delUser={removePerson} />
-      {props.payload}
+
+      <div>
+        {payload.length
+          ? payload.map((x) => {
+              return (
+                <Contacts key={x.id}
+                  name={x.name}
+                  number={x.number}
+                  id={x.id}
+                  delUser={removePerson}
+                />
+              );
+            })
+          : "No Contacts"}
+      </div>
       <footer>&copy; 2021 WebDev Student Dean Wilcoxson</footer>
     </div>
   );
 }
 function mapStateToProps(globalState) {
+  console.log(globalState);
   return {
     payload: globalState,
   };
