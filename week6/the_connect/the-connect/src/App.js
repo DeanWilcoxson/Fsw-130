@@ -6,7 +6,7 @@ import Contacts from "./Components/Contacts";
 import "./Style.css";
 function App(props) {
   const { payload } = props;
- 
+
   return (
     <div>
       <header>The Phone Booth</header>
@@ -16,7 +16,8 @@ function App(props) {
         {payload.length
           ? payload.map((x) => {
               return (
-                <Contacts key={x.id}
+                <Contacts
+                  key={x.id}
                   name={x.name}
                   number={x.number}
                   id={x.id}

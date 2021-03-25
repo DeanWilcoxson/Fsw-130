@@ -30,7 +30,7 @@ footer {
     border-radius: 5px;
 }
 
-#contactsDiv {
+.contactsDiv {
     background-color: rgba(128, 128, 128, 0.545);
     padding: 10px;
     display: flex;

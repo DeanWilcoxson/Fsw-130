@@ -6,13 +6,10 @@ export default function Contacts(props) {
   const dispatch = useDispatch();
   function onDelete(e) {
     e.preventDefault();
-    const delBtns = document.getElementsByClassName("delBtn");
-    console.log(e.target);
+    console.log(e.target.parentNode.id);
     dispatch(
       delUser(
-        delBtns.map((x) => {
-          return x.id === e.target.id;
-        })
+       e.target.parentNode
       )
     );
   }
@@ -20,7 +17,7 @@ export default function Contacts(props) {
     .toString()
     .replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3")}`;
   return (
-    <div id="contactsDiv" key={id}>
+    <div id={id} key={id} className="contactsDiv">
       <span className="contact">
         {name} : {phoneNum}
       </span>

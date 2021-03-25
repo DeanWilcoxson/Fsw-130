@@ -23,7 +23,9 @@ function reducer(state = initialState, action) {
     case "REMOVE_CHARACTER":
       console.log(action.person);
       const updatedArr = state.filter(
-        (thing) => thing.name.toLowerCase() !== action.person.name.toLowerCase()
+        (thing) => {
+          console.log(thing, action.person)
+          return thing.id !== action.person.id}
       );
       console.log(updatedArr);
       return [...updatedArr];
