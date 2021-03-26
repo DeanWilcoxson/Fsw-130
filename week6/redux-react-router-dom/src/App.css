@@ -1,29 +1,84 @@
 body {
-    background-image: url("https://images.unsplash.com/photo-1478720568477-152d9b164e26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTgwOTN8MHwxfHNlYXJjaHwxMnx8bW92aWUlMjBwbGF0Zm9ybXxlbnwwfHx8fDE2MTY3NjE0MzY&ixlib=rb-1.2.1&q=80&w=1080");
+    background-image: url("https://images.unsplash.com/photo-1440404653325-ab127d49abc1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTgwOTN8MHwxfHNlYXJjaHwxNnx8bW92aWUlMjBwbGF0Zm9ybXxlbnwwfHx8fDE2MTY3NjE0MzY&ixlib=rb-1.2.1&q=80&w=1080");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-header {
-    color: white;
+@media only screen and (max-width: 499px) {
+    header {
+        color: white;
+        text-align: center;
+    }
+    footer {
+        color: blue;
+        text-align: center;
+    }
+    .appDiv {
+        background-color: rgba(128, 128, 128, 0.255);
+    }
+    .navBtn {
+        background-color: lightgrey;
+    }
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .link {
+        color: red;
+    }
 }
 
-footer {
-    color: blue;
+@media only screen and (min-width: 500px) and (max-width: 1099px) {
+    header {
+        color: white;
+        text-align: center;
+    }
+    footer {
+        color: blue;
+        text-align: center;
+    }
+    .appDiv {
+        background-color: rgba(128, 128, 128, 0.255);
+    }
+    .navBtn {
+        background-color: lightgrey;
+    }
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .link {
+        color: red;
+    }
 }
 
-.appDiv {
-    background-color: rgba(128, 128, 128, 0.255);
-}
-
-.navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.link {
-    color: red;
+@media only screen and (min-width: 1100px) {
+    header {
+        color: white;
+        text-align: center;
+    }
+    footer {
+        color: blue;
+        text-align: center;
+    }
+    .appDiv {
+        background-color: rgba(128, 128, 128, 0.255);
+    }
+    .navBtn {
+        background-color: lightgrey;
+    }
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .link {
+        color: red;
+    }
 }

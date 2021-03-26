@@ -1,16 +1,6 @@
 import { createStore, combineReducers } from "redux";
-import {
-  movieReducer,
-  // addMovie,
-  // deleteMovie,
-  // getMovie
-} from "../Redux/movies";
-import {
-  tvShowReducer,
-  // addTvShow,
-  // deleteTvShow,
-  // getTvShow,
-} from "../Redux/tvshows";
+import { movieReducer } from "../Redux/movies";
+import { tvShowReducer } from "../Redux/tvshows";
 
 let mainReducer = combineReducers({
   movies: movieReducer,
