@@ -10,15 +10,27 @@ import { addTvShow, deleteTvShow, getTvShow } from "./Redux/tvshows";
 import { addMovie, deleteMovie, getMovie } from "./Redux/movies";
 
 function App(props) {
+  console.log(props);
   return (
     <div className="appDiv">
+    <header>Favorites</header>
       <Navbar />
       <Switch>
         <Route exact path="/movies">
-          <Movies add={addMovie} sub={deleteMovie} get={getMovie} />
+          <Movies
+            add={addMovie}
+            del={deleteMovie}
+            state={props.payload.movies}
+            get={getMovie}
+          />
         </Route>
         <Route exact path="/tvshows">
-          <TvShows add={addTvShow} sub={deleteTvShow} get={getTvShow} />
+          <TvShows
+            add={addTvShow}
+            del={deleteTvShow}
+            state={props.payload.tvShows}
+            get={getTvShow}
+          />
         </Route>
       </Switch>
       <Footer />

@@ -1,24 +1,28 @@
+import { v4 as uuidv4 } from "uuid";
 const initialState = {
-  movies: [],
+  movies: [
+    { title: "Star Wars", id: uuidv4() },
+    { title: "The Goonies", id: uuidv4() },
+  ],
 };
-function addMovie(movie) {
+export function addMovie(movie) {
   return {
     type: "ADD_MOVIE",
     payload: movie,
   };
 }
-function deleteMovie(movie) {
+export function deleteMovie(movie) {
   return {
     type: "DELETE_MOVIE",
     payload: movie,
   };
 }
-function getMovie() {
+export function getMovie() {
   return {
     type: "GET_MOVIE",
   };
 }
-function movieReducer(state = initialState, action) {
+export function movieReducer(state = initialState, action) {
   switch (action.type) {
     case "ADD_MOVIE":
       return {
@@ -41,4 +45,3 @@ function movieReducer(state = initialState, action) {
       return state;
   }
 }
-module.exports = { movieReducer, addMovie, deleteMovie, getMovie };

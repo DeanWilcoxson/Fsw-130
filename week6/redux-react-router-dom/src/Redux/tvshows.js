@@ -1,24 +1,29 @@
+import { v4 as uuidv4 } from "uuid";
+
 const initialState = {
-  tvShows: [],
+  tvShows: [
+    { title: "The Office", id: uuidv4() },
+    { title: "Modern Family", id: uuidv4() },
+  ],
 };
-function addTvShow(tvShow) {
+export function addTvShow(tvShow) {
   return {
     type: "ADD_TV_SHOW",
     payload: tvShow,
   };
 }
-function deleteTvShow(tvShow) {
+export function deleteTvShow(tvShow) {
   return {
     type: "DELETE_TV_SHOW",
     payload: tvShow,
   };
 }
-function getTvShow() {
+export function getTvShow() {
   return {
     type: "GET_TV_SHOW",
   };
 }
-function tvShowReducer(state = initialState, action) {
+export function tvShowReducer(state = initialState, action) {
   switch (action.type) {
     case "ADD_TV_SHOW":
       return {
@@ -41,4 +46,3 @@ function tvShowReducer(state = initialState, action) {
       return state;
   }
 }
-module.exports = { tvShowReducer, addTvShow, deleteTvShow, getTvShow };
