@@ -1,19 +1,27 @@
 import React from "react";
 import Header from "./showHeader";
 import Form from "./showForm";
+import { useDispatch } from "react-redux";
 export default function TvShows(props) {
-  console.log(props);
   const { add, /* get, */ state, del } = props;
-  console.log(state.tvShows);
+  const dispatch = useDispatch();
+  const shows = state.tvShows;
+  function onDelete(e) {
+    e.preventDefault();
+    dispatch(del(e.target.parentNode));
+    console.log(e.target.parentNode.id);
+  }
   return (
     <div>
       <Header />
       <Form add={add} />
-      {state.tvShows.map((x) => {
+      {shows.map((x) => {
         return (
-          <div key={x.id}>
-            <h1>{x.title}</h1>
-            <button onClick={del}>Delete Movie</button>
+          <div key={x.id} className="show">
+            <h1 className="showTitle">{x.title}</h1>
+            <button className="showDelBtn" onClick={onDelete}>
+              Delete Movie
+            </button>
           </div>
         );
       })}

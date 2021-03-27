@@ -32,7 +32,7 @@ export function tvShowReducer(state = initialState, action) {
       };
     case "DELETE_TV_SHOW":
       const updatedArr = state.tvShows.filter(
-        (show) => show !== action.payload
+        (show) => show !== show.id
       );
       return {
         ...state,

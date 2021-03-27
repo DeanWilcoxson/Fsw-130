@@ -10,7 +10,7 @@ import { addTvShow, deleteTvShow, getTvShow } from "./Redux/tvshows";
 import { addMovie, deleteMovie, getMovie } from "./Redux/movies";
 
 function App(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <div className="appDiv">
     <header>Favorites</header>
@@ -38,7 +38,7 @@ function App(props) {
   );
 }
 function mapStateToProps(globalState) {
-  console.log(globalState);
+  // console.log(globalState);
   return {
     payload: globalState,
   };

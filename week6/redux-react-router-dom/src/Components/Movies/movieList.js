@@ -1,19 +1,26 @@
 import React from "react";
 import Header from "./movieHeader";
-import Form from "./movieForm"
+import Form from "./movieForm";
+import { useDispatch } from "react-redux";
 export default function Movies(props) {
-  console.log(props);
   const { add, /* get, */ state, del } = props;
-  console.log(state.movies);
+  const dispatch = useDispatch();
+  const movies = state.movies;
+  function onDelete(e) {
+    e.preventDefault();
+    dispatch(del(e.target.parentNode));
+  }
   return (
     <div>
       <Header />
-      <Form add ={add}/>
-      {state.movies.map((x) => {
+      <Form add={add} />
+      {movies.map((x) => {
         return (
-          <div key={x.id}>
-            <h1>{x.title}</h1>
-            <button onClick={del}>Delete Movie</button>
+          <div key={x.id} className="movie">
+            <h1 className="movieTitle">{x.title}</h1>
+            <button className="movieDelBtn" onClick={onDelete}>
+              Delete Movie
+            </button>
           </div>
         );
       })}
