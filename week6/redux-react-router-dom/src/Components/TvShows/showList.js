@@ -8,7 +8,8 @@ export default function TvShows(props) {
   const shows = state.tvShows;
   function onDelete(e) {
     e.preventDefault();
-    dispatch(del(e.target.parentNode));
+    
+    dispatch(del(e.target.parentNode.id));
     console.log(e.target.parentNode.id);
   }
   return (
@@ -17,11 +18,14 @@ export default function TvShows(props) {
       <Form add={add} />
       {shows.map((x) => {
         return (
-          <div key={x.id} className="show">
-            <h1 className="showTitle">{x.title}</h1>
-            <button className="showDelBtn" onClick={onDelete}>
-              Delete Movie
-            </button>
+          <div key={x.id}>
+          <hr/>
+            <div id={x.id} className="show">
+              <h1 className="showTitle">{x.title}</h1>
+              <button className="showDelBtn" onClick={onDelete}>
+                Delete Movie
+              </button>
+            </div>
           </div>
         );
       })}

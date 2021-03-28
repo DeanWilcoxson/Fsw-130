@@ -11,8 +11,14 @@ export default function Form(props) {
   }
   return (
     <form id="movieForm" onSubmit={onSubmit}>
-      <input required id="titleInput" name="title" placeholder="Movie Title"></input>
-      <button>Add Movie</button>
+      <input
+        required
+        id="titleInput"
+        name="title"
+        placeholder="Movie Title"
+        className="titleInput"
+      ></input>
+      <button id="addMovieBtn">Add Movie</button>
     </form>
   );
 }

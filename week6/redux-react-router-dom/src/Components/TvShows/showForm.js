@@ -11,8 +11,14 @@ export default function Form(props) {
   }
   return (
     <form id="tvForm" onSubmit={onSubmit}>
-      <input required id="titleInput" name="title" placeholder="Tv Show Title"></input>
-      <button>Add Tv Show</button>
+      <input
+        required
+        id="titleInput"
+        className="titleInput"
+        name="title"
+        placeholder="Tv Show Title"
+      ></input>
+      <button id="addShowBtn">Add Tv Show</button>
     </form>
   );
 }

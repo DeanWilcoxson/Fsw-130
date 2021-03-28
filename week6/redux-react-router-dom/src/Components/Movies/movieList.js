@@ -8,7 +8,9 @@ export default function Movies(props) {
   const movies = state.movies;
   function onDelete(e) {
     e.preventDefault();
-    dispatch(del(e.target.parentNode));
+    console.log(del)
+    dispatch(del(e.target.parentNode.id));
+    console.log(e.target.parentNode.id);
   }
   return (
     <div>
@@ -16,11 +18,14 @@ export default function Movies(props) {
       <Form add={add} />
       {movies.map((x) => {
         return (
-          <div key={x.id} className="movie">
-            <h1 className="movieTitle">{x.title}</h1>
-            <button className="movieDelBtn" onClick={onDelete}>
-              Delete Movie
-            </button>
+          <div key={x.id}>
+          <hr/>
+            <div id={x.id} className="movie">
+              <h1 className="movieTitle">{x.title}</h1>
+              <button className="movieDelBtn" onClick={onDelete}>
+                Delete Movie
+              </button>
+            </div>
           </div>
         );
       })}

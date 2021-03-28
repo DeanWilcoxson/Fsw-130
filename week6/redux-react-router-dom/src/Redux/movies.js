@@ -12,6 +12,7 @@ export function addMovie(movie) {
   };
 }
 export function deleteMovie(movie) {
+  console.log(movie);
   return {
     type: "DELETE_MOVIE",
     payload: movie,
@@ -30,9 +31,12 @@ export function movieReducer(state = initialState, action) {
         movies: [...state.movies, action.payload],
       };
     case "DELETE_MOVIE":
-      const updatedArr = state.movies.filter(
-        (movie) => movie !== action.payload
-      );
+      console.log("hello");
+      console.log(action.payload);
+      const updatedArr = state.movies.filter((movie) => {
+        console.log(movie);
+        return movie.id !== action.payload;
+      });
       return {
         ...state,
         movies: updatedArr,

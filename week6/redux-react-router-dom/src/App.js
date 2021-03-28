@@ -13,7 +13,7 @@ function App(props) {
   // console.log(props);
   return (
     <div className="appDiv">
-    <header>Favorites</header>
+      <header>Filmed Favorites</header>
       <Navbar />
       <Switch>
         <Route exact path="/movies">
