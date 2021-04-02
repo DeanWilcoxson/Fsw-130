@@ -1,5 +1,6 @@
+import {v4 as uuidv4} from "uuid";
 const initialState = {
-  chars: [],
+  chars: [{ name: "Rick Sanchez", id: uuidv4() }],
 };
 export function addRmChar(character) {
   return { type: "ADD_CHAR", data: character };

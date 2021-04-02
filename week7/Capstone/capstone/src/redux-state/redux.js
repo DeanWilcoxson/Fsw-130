@@ -2,11 +2,10 @@ import { createStore, combineReducers } from "redux";
 import { dbzReducer } from "./dbzReducer";
 import { rmReducer } from "./rmReducer";
 import { swReducer } from "./swReducer";
-
 let mainReducer = combineReducers({
   rmChars: rmReducer,
   swChars: swReducer,
-  dbzChars: dbzReducer
+  dbzChars: dbzReducer,
 });
 const store = createStore(
   mainReducer,

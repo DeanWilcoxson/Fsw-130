@@ -1,5 +1,6 @@
+import { v4 as uuidv4 } from "uuid";
 const initialState = {
-  chars: [],
+  chars: [{ name: "Vegeta", id: uuidv4() }],
 };
 export function addDbzChar(character) {
   return { type: "ADD_CHAR", data: character };
@@ -36,6 +37,5 @@ export function dbzReducer(state = initialState, action) {
       };
     default:
       return state;
-  
-}
+  }
 }

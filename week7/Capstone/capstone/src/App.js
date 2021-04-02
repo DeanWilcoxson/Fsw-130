@@ -6,6 +6,7 @@ import Navbar from "./Components/Navbar";
 import RM from "./Components/RM";
 import SW from "./Components/SW.js";
 import DBZ from "./Components/DBZ";
+import Home from "./Components/Home";
 import { addRmChar, delRmChar, getRmChars } from "./redux-state/rmReducer";
 import { addSwChar, delSwChar, getSwChars } from "./redux-state/swReducer";
 import { addDbzChar, delDbzChar, getDbzChars } from "./redux-state/dbzReducer";
@@ -13,16 +14,32 @@ import { addDbzChar, delDbzChar, getDbzChars } from "./redux-state/dbzReducer";
 function App(props) {
   return (
     <div className="App">
+      <h1>Favorite Characters</h1>
       <Navbar />
       <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
         <Route exact path="/RickAndMorty">
-          <RM />
+          <RM
+            add={addRmChar}
+            del={delRmChar}
+            state={props.data.rmChars.chars}
+          />
         </Route>
         <Route exact path="/StarWars">
-          <SW />
+          <SW
+            add={addSwChar}
+            del={delSwChar}
+            state={props.data.swChars.chars}
+          />
         </Route>
         <Route exact path="/DragonBallZ">
-          <DBZ />
+          <DBZ
+            add={addDbzChar}
+            del={delDbzChar}
+            state={props.data.dbzChars.chars}
+          />
         </Route>
       </Switch>
     </div>
@@ -30,17 +47,19 @@ function App(props) {
 }
 function mapStateToProps(globalState) {
   console.log(globalState);
-  return { payload: globalState };
+  return { data: globalState };
 }
 const mapDispatchToProps = {
   addRm: addRmChar,
-  delRm: delRmChar,
-  getRm: getRmChars,
   addSw: addSwChar,
-  delSw: delSwChar,
-  getSw: getSwChars,
   addDbz: addDbzChar,
+
+  delRm: delRmChar,
+  delSw: delSwChar,
   delDbz: delDbzChar,
+  
+  getRm: getRmChars,
+  getSw: getSwChars,
   getDbz: getDbzChars,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(App);
