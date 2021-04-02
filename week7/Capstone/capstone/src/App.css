@@ -1,38 +1,40 @@
-.App {
-  text-align: center;
+.imgNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.homePage {
+    text-align: center;
+    color: rgb(10, 241, 10);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.footer {
+    text-align: center;
+    color: rgb(10, 241, 10);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header {
+    text-align: center;
+    color: white
 }
 
-.App-link {
-  color: #61dafb;
+.home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navBtn {
+    background-color: blue;
+    border-radius: 5px;
+}
+
+body {
+    background-image: url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTgwOTN8MHwxfHNlYXJjaHw3fHxzcGFjZXxlbnwwfHx8fDE2MTczNzI1NzU&ixlib=rb-1.2.1&q=80&w=1080");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
