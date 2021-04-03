@@ -5,19 +5,59 @@
     align-items: center;
 }
 
+* {
+    text-shadow: 2px 2px 3px grey;
+}
+
+.imgBtn {
+    width: 300px;
+    height: 400px;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 950px) {
+    .imgBtn {
+        width: 200px;
+        height: 250px;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 500px) {
+    .imgNav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .imgBtn {
+        width: 150px;
+        height: 200px;
+    }
+}
+
 .homePage {
     text-align: center;
-    color: rgb(10, 241, 10);
+    color: rgb(226, 241, 10);
+    background-color: rgba(0, 56, 198, 0.4);
+    border-radius: 5px;
+}
+
+.header {
+    text-decoration: underline;
 }
 
 .footer {
     text-align: center;
-    color: rgb(10, 241, 10);
+    color: rgb(226, 241, 10);
+    background-color: rgba(0, 56, 198, 0.4);
+    border-radius: 5px;
 }
 
 header {
     text-align: center;
-    color: white
+    color: rgb(226, 241, 10);
+    background-color: rgba(0, 56, 198, 0.4);
+    border-radius: 5px;
+    font-size: larger;
 }
 
 .home {
@@ -28,11 +68,46 @@ header {
 }
 
 .navBtn {
-    background-color: blue;
+    margin: 10px;
+    background-color: rgb(0, 0, 255);
+    box-shadow: rgb(226, 241, 10) 3px 2px 5px;
     border-radius: 5px;
 }
 
+.charDiv {
+    grid-column: 2/3;
+    display: flex;
+    background-color: rgba(0, 56, 198, 0.4);
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: black 3px outset;
+}
+
+.charGridBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.character {
+    color: white;
+    text-align: center;
+}
+
+.delBtn {
+    background-color: red;
+    color: white;
+}
+
+.charForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 body {
+    /* background-color: darkgrey; */
     background-image: url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTgwOTN8MHwxfHNlYXJjaHw3fHxzcGFjZXxlbnwwfHx8fDE2MTczNzI1NzU&ixlib=rb-1.2.1&q=80&w=1080");
     background-repeat: no-repeat;
     background-attachment: fixed;

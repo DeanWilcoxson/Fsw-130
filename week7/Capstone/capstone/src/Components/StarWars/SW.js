@@ -4,11 +4,14 @@ import Header from "./Header";
 import Form from "./Form";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import Characters from "./Characters";
 export default function SW(props) {
-  const home = <FontAwesomeIcon icon={faHome} color="green" size="5x" />;
+  const home = <FontAwesomeIcon icon={faHome} color="yellow" size="5x" />;
+  const { del, state, add } = props;
+
   return (
     <div>
-      <Header />
       <div className="home">
         <button className="navBtn">
           <Link to="/" className="link">
@@ -16,7 +19,10 @@ export default function SW(props) {
           </Link>
         </button>
       </div>
-      <Form />
+      <Header />
+      <hr />
+      <Form add={add} />
+      <Characters del={del} state={state} />
     </div>
   );
 }
