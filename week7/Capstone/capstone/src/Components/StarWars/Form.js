@@ -8,7 +8,7 @@ export default function Form(props) {
   function onSubmit(e) {
     e.preventDefault();
     const name = document.getElementById("charInput");
-        const url = document.getElementById("charUrl");
+    const url = document.getElementById("charUrl");
 
     dispatch(add({ name: name.value, img: url.value, id: uuidv4() }));
   }
@@ -20,6 +20,14 @@ export default function Form(props) {
         id="charInput"
         name="name"
         className="charInput"
+        required
+      ></input>
+      <input
+        type="url"
+        placeholder="Image Url"
+        id="charUrl"
+        name="url"
+        className="charUrl"
         required
       ></input>
       <button className="addBtn">Add Character</button>

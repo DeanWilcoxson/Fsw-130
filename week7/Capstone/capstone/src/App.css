@@ -75,7 +75,7 @@ header {
 }
 
 .charDiv {
-    grid-column: 2/3;
+    /* grid-column: 2/3; */
     display: flex;
     background-color: rgba(0, 56, 198, 0.4);
     flex-direction: column;
@@ -93,7 +93,8 @@ header {
 
 .charGridBox {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: auto;
 }
 
 .character {
@@ -108,7 +109,7 @@ header {
 
 .charForm {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
