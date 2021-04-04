@@ -8,7 +8,7 @@ import Characters from "./Characters";
 
 export default function RM(props) {
   const home = <FontAwesomeIcon icon={faHome} color="yellow" size="5x" />;
-  const { delRm, state, addRm } = props;
+  const { del, state, add } = props;
   console.log(props);
   return (
     <div>
@@ -21,8 +21,8 @@ export default function RM(props) {
       </div>
       <Header />
       <hr />
-      <Form addRm={addRm} />
-      <Characters delRm={delRm} state={state} />
+      <Form add={add} />
+      <Characters del={del} state={state} />
     </div>
   );
 }

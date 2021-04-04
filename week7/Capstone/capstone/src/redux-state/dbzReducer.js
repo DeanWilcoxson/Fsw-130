@@ -31,9 +31,24 @@ const initialState = {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuSEJwNKSrffOs5Tx67P87xWMLiC-KnD274A&usqp=CAU",
       id: uuidv4(),
     },
-    { name: "Yamcha", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMBEsz9DU65rGN5NzdTsN6MaqPnMFbRtlpRw&usqp=CAU", id: uuidv4() },
-    { name: "Krillin", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS4N29sftmti9mVVxF4f4Z5XpuQulJUX7QxA&usqp=CAU", id: uuidv4() },
-    { name: "Frieza", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKyX5oZoOwWc3aMSg0QOoeqf1MEfWheZx-sA&usqp=CAU", id: uuidv4() },
+    {
+      name: "Yamcha",
+      img:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMBEsz9DU65rGN5NzdTsN6MaqPnMFbRtlpRw&usqp=CAU",
+      id: uuidv4(),
+    },
+    {
+      name: "Krillin",
+      img:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS4N29sftmti9mVVxF4f4Z5XpuQulJUX7QxA&usqp=CAU",
+      id: uuidv4(),
+    },
+    {
+      name: "Frieza",
+      img:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKyX5oZoOwWc3aMSg0QOoeqf1MEfWheZx-sA&usqp=CAU",
+      id: uuidv4(),
+    },
   ],
 };
 export function addDbzChar(character) {
