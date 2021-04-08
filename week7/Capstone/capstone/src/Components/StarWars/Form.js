@@ -9,7 +9,7 @@ export default function Form(props) {
     e.preventDefault();
     const name = document.getElementById("charInput");
     const url = document.getElementById("charUrl");
-
+    console.log("swForm");
     dispatch(add({ name: name.value, img: url.value, id: uuidv4() }));
   }
   return (

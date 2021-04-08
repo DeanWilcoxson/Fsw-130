@@ -52,7 +52,7 @@ const initialState = {
   ],
 };
 export function addDbzChar(character) {
-  return { type: "ADD_CHAR", data: character };
+  return { type: "ADD_DBZ_CHAR", data: character };
 }
 export function delDbzChar(character) {
   return { type: "DELETE_CHAR", data: character };
@@ -64,10 +64,12 @@ export function getDbzChars() {
 }
 export function dbzReducer(state = initialState, action) {
   switch (action.type) {
-    case "ADD_CHAR":
+    case "ADD_DBZ_CHAR":
+      console.log("dbzReducer")
       return {
         ...state,
         chars: [...state.chars, action.data],
+        
       };
     case "DELETE_CHAR":
       console.log("hello");

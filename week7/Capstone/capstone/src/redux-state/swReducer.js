@@ -46,7 +46,7 @@ const initialState = {
   ],
 };
 export function addSwChar(character) {
-  return { type: "ADD_CHAR", data: character };
+  return { type: "ADD_SW_CHAR", data: character };
 }
 export function delSwChar(character) {
   return { type: "DELETE_CHAR", data: character };
@@ -58,7 +58,9 @@ export function getSwChars() {
 }
 export function swReducer(state = initialState, action) {
   switch (action.type) {
-    case "ADD_CHAR":
+    case "ADD_SW_CHAR":
+            console.log("swReducer")
+
       return {
         ...state,
         chars: [...state.chars, action.data],

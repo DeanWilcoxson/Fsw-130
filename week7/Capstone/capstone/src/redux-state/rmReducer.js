@@ -47,7 +47,7 @@ const initialState = {
 };
 export function addRmChar(character) {
   console.log(character);
-  return { type: "ADD_CHAR", data: character };
+  return { type: "ADD_RM_CHAR", data: character };
 }
 export function delRmChar(character) {
   console.log(character);
@@ -60,7 +60,9 @@ export function getRmChars() {
 }
 export function rmReducer(state = initialState, action) {
   switch (action.type) {
-    case "ADD_CHAR":
+    case "ADD_RM_CHAR":
+            console.log("rmReducer")
+
       return {
         ...state,
         chars: [...state.chars, action.data],

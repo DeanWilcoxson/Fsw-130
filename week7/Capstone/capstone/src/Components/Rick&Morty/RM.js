@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Characters from "./Characters";
+import { addRmChar, delRmChar, getRmChars } from "../../redux-state/rmReducer";
 
 export default function RM(props) {
   const home = <FontAwesomeIcon icon={faHome} color="yellow" size="5x" />;
   const { del, state, add } = props;
-  console.log(props);
+  console.log("rm", props);
   return (
     <div>
       <div className="home">
@@ -21,7 +22,7 @@ export default function RM(props) {
       </div>
       <Header />
       <hr />
-      <Form add={add} />
+      <Form add={addRmChar} />
       <Characters del={del} state={state} />
     </div>
   );
